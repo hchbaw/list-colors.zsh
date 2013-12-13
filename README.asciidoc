@@ -5,6 +5,9 @@ Originally nicoulaj at
 http://www.reddit.com/r/zsh/comments/msps0/color_partial_tab_completions_in_zsh/c367xqo
 
 
+Thank you very much Julien Nicoulaud!
+
+
 Adapted by: Takeshi Banse <takebi@laafc.net>, public domain
 
 I want to teach the $LS_COLORS as much as possible.
