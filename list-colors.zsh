@@ -53,7 +53,6 @@ ${(j:;:)${${(s.:.)s}//(#b)(*)=(*)/tmp2[\"${match[2]}\"]+=$match[1]$'\0'}}
     local -a match mbegin mend
     case "${(Q)2}" in
       ((#b)(*)(38\;5\;)([^\;]#)(*))
-      echo $match[3] >> /tmp/a
         local s="${colordefs[c${match[3]}]-}"
         if [[ -n "${s}" ]]; then
           $fn "$s"
