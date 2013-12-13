@@ -47,16 +47,15 @@ SYNOPSIS
 DESCRIPTION
 ~~~~~~~~~~~
 Dumps out the list-colors.zsh's variable which will be converted from
-<dircolors file> (`dircorols(5)`) and functions which will be actually
+<dircolors file> (`dircolors(5)`) and functions which will be actually
 needed at the runtime under <directory to output> which is most likely in
-`$fpath`. <color file> is used to define the colors which maps `dircorols`
+`$fpath`. <color file> is used to define the colors which maps `dircolors`
 color to the another/cursor color.
 
 EXAMPLES
 ~~~~~~~~
 
-The following will read the '~/.dir_colors' then generate
-'~/.zsh/list-colols{,zwc}'.
+The following will read the '{tilde}/.dir_colors' then generate '{tilde}/.zsh/list-colols{,zwc}'.
 
 ----
 % $SHELL -uc ". ./list-colors && list-colors-zcompile ~/.dir_colors ~/.zsh"
