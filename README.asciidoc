@@ -1,0 +1,78 @@
+fancy list-color 
+----------------
+Originally nicoulaj at
+
+http://www.reddit.com/r/zsh/comments/msps0/color_partial_tab_completions_in_zsh/c367xqo
+
+
+Adapted by: Takeshi Banse <takebi@laafc.net>, public domain
+
+I want to teach the $LS_COLORS as much as possible.
+
+
+////
+////
+
+.list-colors.zsh demo (link:http://www.youtube.com/watch?v=DK6BTjFQKuU[http://www.youtube.com/watch?v=DK6BTjFQKuU])
+image:https://github.com/hchbaw/list-colors.zsh/raw/readme/list-colors.zsh.png["list-corols.zsh", link="http://www.youtube.com/watch?v=DK6BTjFQKuU"]
+
+It is far from complete though.
+It can't respect the file-type specific dircolor settings. Though it will
+try to respect the directory-type color (which is set by dircolors) by
+giving a special attention to the completion group name, but it's still
+quite error-prone. Please be aware of.
+
+Install
+-------
+
+[source]
+----
+% git clone https://github.com/hchbaw/list-colors.zsh.git
+% cd list-colors.zsh.git
+% $SHELL -uc ". ./list-colors.zsh && list-colors-zcompile ~/.dir_colors ~/.zsh/"
+** Dumping and zcompiling for ~/.dir_colors
+re-compiling ~/.zsh/list-colors-init.zwc: succeeded
+** All done.
+** Please update your .zshrc like this:
+-- >8 --
+fpath+=~/.zsh
+autoload -Uz list-colors-init; list-colors-init
+zstyle -e ':completion:*:default' list-colors list-colors list-colors-aux
+# zstyle ':completion:*' group-name ''
+# If you want to make it to respect directory-type color setting, you need
+# to uncomment above line, please.
+-- 8< --
+----
+
+[CAUTION]
+
+
+list-colors-zcomplie
+--------------------
+
+NAME
+~~~~
+list-colors-zcompile - Dump and zcompile list-corols.zsh
+
+SYNOPSIS
+~~~~~~~~
+[verse]
+'list-colors-zcompile' <dircolors file> <directory to output> <color file>
+
+DESCRIPTION
+~~~~~~~~~~~
+Dumps out the list-colors.zsh's variable which will be converted from
+<dircolors file> (`dircorols(5)`) and functions which will be actually
+needed at the runtime under <directory to output> which is most likely in
+`$fpath`. <color file> is used to define the colors which maps `dircorols`
+color to the another/cursor color.
+
+EXAMPLES
+~~~~~~~~
+
+The following will read the '~/.dir_colors' and the generate
+'~/.zsh/list-colols{,zwc}'.
+
+----
+% $SHELL -uc ". ./list-colors && list-colors-zcompile ~/.dir_colors ~/.zsh"
+----
