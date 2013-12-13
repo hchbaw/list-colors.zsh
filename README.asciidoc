@@ -47,9 +47,6 @@ zstyle -e ':completion:*:default' list-colors list-colors list-colors-aux
 -- 8< --
 ----
 
-[CAUTION]
-
-
 list-colors-zcomplie
 --------------------
 
@@ -73,7 +70,7 @@ color to the another/cursor color.
 EXAMPLES
 ~~~~~~~~
 
-The following will read the '~/.dir_colors' and the generate
+The following will read the '~/.dir_colors' then generate
 '~/.zsh/list-colols{,zwc}'.
 
 ----
