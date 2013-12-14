@@ -19,14 +19,14 @@ list-colors-init () {
   local colordefsfile="$3"; [[ -e "$colordefsfile" ]]
   eval "$(dircolors -b "$colordefsfile")"
   local d="$LS_COLORS"
-  local -A colordefs;
+  local -A colordefs
+  local -a match mbegin mend
   eval \
 ${(j:;:)${${(s.:.)d}//(#b)(*)=(*)/colordefs[${match[1]#\*.}]=\"$match[2]\"}}
 
   eval "$(dircolors -b $dircolorsfile)"
   local s="$LS_COLORS"
   local -A tmp2
-  local -a match mbegin mend
   eval \
 ${(j:;:)${${(s.:.)s}//(#b)(*)=(*)/tmp2[\"${match[2]}\"]+=$match[1]$'\0'}}
   list-colors-init-dimmifycall () {
