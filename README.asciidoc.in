@@ -16,7 +16,7 @@ Install
 [source]
 ----
 % git clone https://github.com/hchbaw/list-colors.zsh.git
-% cd list-colors.zsh.git
+% cd list-colors.zsh
 % $SHELL -uc ". ./list-colors.zsh && list-colors-zcompile ~/.dir_colors ~/.zsh/"
 ** Dumping and zcompiling for ~/.dir_colors
 re-compiling ~/.zsh/list-colors-init.zwc: succeeded
